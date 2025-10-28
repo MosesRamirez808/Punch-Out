@@ -1,0 +1,174 @@
+/* Global Reset and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background-image: url('mount_golgotha.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #F5F0E6; /* Fallback background */
+  color: #3E2F1C;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  background-color: rgba(245, 240, 230, 0.95);
+  margin: 60px auto;
+  padding: 35px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(62, 47, 28, 0.7);
+  text-align: center;
+  position: relative;
+}
+
+/* Header */
+.header {
+  font-weight: 700;
+  font-size: 2em;
+  margin-bottom: 25px;
+  color: #5B4636;
+}
+
+/* Search Bar Area */
+.search-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* Side Images (Virgin Mary, Sacred Heart) */
+.side-image {
+  width: 100px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(91, 70, 54, 0.7);
+  border: 2px solid #7F6A52;
+  transition: transform 0.2s ease-in-out;
+}
+
+.side-image:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+/* Input Field */
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  border: 2px solid #7F6A52;
+  border-radius: 6px;
+  background-color: #F9F6F0;
+  color: #3E2F1C;
+  min-width: 250px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #A9895F;
+  background-color: #FFF9E3;
+}
+
+input::placeholder {
+  color: #7F6A52;
+  opacity: 1;
+}
+
+/* Button */
+button {
+  padding: 14px 24px;
+  font-size: 1.2em;
+  background-color: #A9895F;
+  border: none;
+  color: #3E2F1C;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(169, 137, 95, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+button:focus {
+  background-color: #7F6A52;
+  color: #F9F6F0;
+}
+
+/* Search Results */
+.results {
+  margin-top: 25px;
+  text-align: left;
+  max-height: 240px;
+  overflow-y: auto;
+  font-size: 1em;
+  color: #4B3B22;
+  padding: 10px;
+  background-color: #F9F6F0;
+  border-radius: 6px;
+}
+
+/* Crucifix and Side Content */
+.crucifix-row {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.crucifix-container img {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(91, 70, 54, 0.7);
+  border-radius: 8px;
+  border: 2px solid #7F6A52;
+}
+
+/* Side Text Links */
+.side-text {
+  font-size: 1.1em;
+  color: #5B4636;
+  max-width: 150px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .side-image {
+    width: 70px;
+  }
+
+  input[type="text"],
+  button {
+    font-size: 1em;
+  }
+
+  .crucifix-row {
+    flex-direction: column;
+  }
+
+  .side-text {
+    max-width: none;
+  }
+}
