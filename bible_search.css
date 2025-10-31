@@ -25,7 +25,8 @@ line-height: 1.6;
 background-color: #D9CFC0; /* slightly darker fallback */
 color: #3E2F1C;
 line-height: 1.6;
-/* Main Container – 30% Smaller and Right-Aligned */
+}
+ /* Main Container – 30% Smaller and Right-Aligned */
 .container {
   max-width: 630px; /* 900px reduced by 30% */
   background-color: rgba(245, 240, 230, 0.95);
@@ -202,5 +203,5 @@ button:focus {
 
   .side-text {
     max-width: none;
-  }
+  } 
 }
