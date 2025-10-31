@@ -8,21 +8,29 @@
 body {
   margin: 0;
   font-family: "Georgia", serif;
-  background-image: url('mount_golgotha.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #F5F0E6; /* Fallback background */
-  color: #3E2F1C;
-  line-height: 1.6;
-}
 
-/* Container */
+ /* Mount Golgotha Background – Darkened via image only */
+background-image: url("images/mtgolgotha.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+
+/* Fallback color */
+background-color: #D9CFC0; /* slightly darker fallback */
+color: #3E2F1C;
+line-height: 1.6;
+
+/* Fallback */
+background-color: #D9CFC0; /* slightly darker fallback */
+color: #3E2F1C;
+line-height: 1.6;
+/* Main Container – 30% Smaller and Right-Aligned */
 .container {
-  max-width: 900px;
+  max-width: 630px; /* 900px reduced by 30% */
   background-color: rgba(245, 240, 230, 0.95);
-  margin: 60px auto;
-  padding: 35px 40px;
+  margin: 60px 20px 60px auto; /* right-aligned */
+  padding: 25px 30px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(62, 47, 28, 0.7);
   text-align: center;
@@ -37,41 +45,35 @@ body {
   color: #5B4636;
 }
 
-/* Search Bar Area */
+/* Search Row */
 .search-row {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
-/* Side Images (Virgin Mary, Sacred Heart) */
-.side-image {
-  width: 100px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(91, 70, 54, 0.7);
-  border: 2px solid #7F6A52;
-  transition: transform 0.2s ease-in-out;
-}
-
-.side-image:hover {
-  cursor: pointer;
-  transform: scale(1.03);
+/* Column for input and button */
+.input-column {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 10px;
+  align-items: center;
 }
 
 /* Input Field */
 input[type="text"] {
-  flex-grow: 1;
+  width: 100%;
   padding: 10px 15px;
   font-size: 1.2em;
   border: 2px solid #7F6A52;
   border-radius: 6px;
   background-color: #F9F6F0;
   color: #3E2F1C;
-  min-width: 250px;
+  min-width: 200px;
   transition: border-color 0.3s ease;
 }
 
@@ -86,9 +88,9 @@ input::placeholder {
   opacity: 1;
 }
 
-/* Button */
+/* Button below input */
 button {
-  padding: 14px 24px;
+  padding: 12px 22px;
   font-size: 1.2em;
   background-color: #A9895F;
   border: none;
@@ -106,6 +108,21 @@ button:focus {
   color: #F9F6F0;
 }
 
+/* Side Images (Jesus & Mary) */
+.side-image {
+  width: 90px; /* reduced to fit smaller container */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(91, 70, 54, 0.7);
+  border: 2px solid #7F6A52;
+  transition: transform 0.2s ease-in-out;
+}
+
+.side-image:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
 /* Search Results */
 .results {
   margin-top: 25px;
@@ -119,7 +136,7 @@ button:focus {
   border-radius: 6px;
 }
 
-/* Crucifix and Side Content */
+/* Crucifix Row */
 .crucifix-row {
   margin-top: 40px;
   display: flex;
@@ -130,7 +147,7 @@ button:focus {
 }
 
 .crucifix-container img {
-  width: 180px;
+  width: 225px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -151,7 +168,8 @@ button:focus {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .container {
-    margin: 20px;
+    max-width: 90%;
+    margin: 20px auto; /* center for mobile */
     padding: 20px;
   }
 
@@ -159,13 +177,27 @@ button:focus {
     width: 70px;
   }
 
-  input[type="text"],
+  .search-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .input-column {
+    width: 100%;
+  }
+
+  input[type="text"] {
+    width: 90%;
+  }
+
   button {
-    font-size: 1em;
+    width: 50%;
   }
 
   .crucifix-row {
     flex-direction: column;
+    gap: 15px;
   }
 
   .side-text {
